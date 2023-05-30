@@ -14,7 +14,7 @@
   },
   "author": " <syednew5000@gmail.com>",
   "license": "ISC",
-    "lint-staged": {
+  "lint-staged": {
     "src/**/*.ts": "yarn lint-prettier"
   },
   "devDependencies": {
