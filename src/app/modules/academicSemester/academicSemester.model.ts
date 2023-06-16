@@ -16,7 +16,7 @@ const academicSemesterSchema = new Schema<IAcademicSemester>(
       enum: academicSemesterTitles,
     },
     year: {
-      type: Number,
+      type: String,
       required: true,
     },
     code: {
@@ -37,6 +37,9 @@ const academicSemesterSchema = new Schema<IAcademicSemester>(
   },
   {
     timestamps: true,
+    toJSON: {
+      virtuals: true,
+    },
   }
 );
 
@@ -58,13 +61,3 @@ export const AcademicSemester = model<IAcademicSemester>(
   'AcademicSemester',
   academicSemesterSchema
 );
-
-//Handling Same Year and same semester issue
-
-// Data -> check -? Same year && same semester
-
-// 2025 Autumn
-// 2025 Autumn- X
-//2026 Autumn
-
-// Same Year && Same Semester -> Duplicate Entry
